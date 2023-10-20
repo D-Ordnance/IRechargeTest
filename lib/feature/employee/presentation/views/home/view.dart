@@ -137,7 +137,7 @@ class HomeView extends StatelessWidget {
   }
 
   void filterEmployee(BuildContext context, Map<String, String> key) {
-    BlocProvider.of<EmployeeBloc>(context).add(FetchEmployeesByKeysEvent(key));
+    // BlocProvider.of<EmployeeBloc>(context).add(FetchEmployeesByKeysEvent(key));
   }
 
   Future<void> _showErrorDialog(BuildContext context,
