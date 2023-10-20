@@ -13,22 +13,23 @@ import 'fetch_employee_test.mocks.dart';
 @GenerateNiceMocks([MockSpec<EmployeeRepository>()])
 void main() {
   late MockEmployeeRepository repo;
-  late FetchEmployee usecase;
+  late FetchEmployees usecase;
 
   setUp(() {
     repo = MockEmployeeRepository();
-    usecase = FetchEmployee(repo);
+    usecase = FetchEmployees(repo);
   });
 
   group('getEmployee', () {
     test('Should return [EmployeeEntity]', () async {
-      EmployeeData data = const EmployeeData(
+      EmployeeData data = EmployeeData(
           id: 1,
           firstName: "Dolapo",
           lastName: "Olakanmi",
-          level: "4",
+          level: 4,
+          newLevel: 0,
           designation: "Mobile Engineer",
-          employeeScore: 70,
+          productivityScore: 70,
           currentSalary: "100,000",
           employmentStatus: 1);
       EmployeeEntity employee =

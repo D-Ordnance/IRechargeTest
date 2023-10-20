@@ -19,22 +19,22 @@ void main() {
 
   group('getEmployee', () {
     test('Should return [EmployeeEntity]', () async {
-      EmployeeData data = const EmployeeData(
+      EmployeeData data = EmployeeData(
           id: 1,
           firstName: "Dolapo",
           lastName: "Olakanmi",
-          level: "4",
+          level: 4,
           designation: "Mobile Engineer",
-          employeeScore: 70,
+          productivityScore: 70,
           currentSalary: "100,000",
           employmentStatus: 1);
       EmployeeEntity employee =
           EmployeeEntity(msg: "Successful", employees: [data]);
-      when(usecase(1)).thenAnswer((_) async => Right(employee));
+      when(usecase(1)).thenAnswer((_) async => Right(data));
 
       final actual = await usecase(1);
 
-      expect(actual, Right(employee));
+      expect(actual, Right(data));
 
       verify(repo.getEmployeeDetails(1));
 

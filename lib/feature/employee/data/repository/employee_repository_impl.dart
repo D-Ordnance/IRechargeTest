@@ -8,7 +8,7 @@ import 'package:mobile_assessment/feature/employee/domain/repository/employee_re
 
 import '../../../../core/network/network_info.dart';
 
-class EmployeeRepositoryImpl extends EmployeeRepository {
+class EmployeeRepositoryImpl implements EmployeeRepository {
   static const String GENERIC_ERROR_MSG = "Something went wrong";
 
   late EmployeeDataSource dataSource;

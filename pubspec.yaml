@@ -20,6 +20,7 @@ dependencies:
   sqflite: ^2.3.0
   path: ^1.8.3
   bloc: ^8.1.2
+  get_it: ^7.6.4
 
 dev_dependencies:
   flutter_test:
@@ -39,9 +40,14 @@ flutter:
 
   uses-material-design: true
 
-#  assets:
-#    - assets/images/
-#    - assets/images/logos/
-#    - assets/images/icons/
-#    - assets/images/navbar_icons/active/
-#    - assets/images/navbar_icons/inactive/
+  assets:
+      - lib/images/
+  fonts:
+    - family: Euclid
+      fonts:
+        - asset: lib/fonts/EuclidCircularA-Regular.ttf
+          weight: 400
+        - asset: lib/fonts/EuclidCircularA-SemiBold.ttf
+          weight: 500
+        - asset: lib/fonts/EuclidCircularA-Bold.ttf
+          weight: 600

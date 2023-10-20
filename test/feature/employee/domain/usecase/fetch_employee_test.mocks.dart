@@ -7,6 +7,8 @@ import 'dart:async' as _i4;
 
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:mobile_assessment/core/error/failure.dart' as _i5;
+import 'package:mobile_assessment/feature/employee/data/model/employee_data.dart'
+    as _i7;
 import 'package:mobile_assessment/feature/employee/domain/entity/employee_entity.dart'
     as _i6;
 import 'package:mobile_assessment/feature/employee/domain/repository/employee_repository.dart'
@@ -67,7 +69,7 @@ class MockEmployeeRepository extends _i1.Mock
       ) as _i4.Future<_i2.Either<_i5.Failure, _i6.EmployeeEntity>>);
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i6.EmployeeEntity>> getEmployeeDetails(
+  _i4.Future<_i2.Either<_i5.Failure, _i7.EmployeeData>> getEmployeeDetails(
           int? id) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -75,8 +77,8 @@ class MockEmployeeRepository extends _i1.Mock
           [id],
         ),
         returnValue:
-            _i4.Future<_i2.Either<_i5.Failure, _i6.EmployeeEntity>>.value(
-                _FakeEither_0<_i5.Failure, _i6.EmployeeEntity>(
+            _i4.Future<_i2.Either<_i5.Failure, _i7.EmployeeData>>.value(
+                _FakeEither_0<_i5.Failure, _i7.EmployeeData>(
           this,
           Invocation.method(
             #getEmployeeDetails,
@@ -84,12 +86,40 @@ class MockEmployeeRepository extends _i1.Mock
           ),
         )),
         returnValueForMissingStub:
-            _i4.Future<_i2.Either<_i5.Failure, _i6.EmployeeEntity>>.value(
-                _FakeEither_0<_i5.Failure, _i6.EmployeeEntity>(
+            _i4.Future<_i2.Either<_i5.Failure, _i7.EmployeeData>>.value(
+                _FakeEither_0<_i5.Failure, _i7.EmployeeData>(
           this,
           Invocation.method(
             #getEmployeeDetails,
             [id],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i7.EmployeeData>>);
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i6.EmployeeEntity>> getFilteredEmployees(
+          Map<String, String>? keys) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getFilteredEmployees,
+          [keys],
+        ),
+        returnValue:
+            _i4.Future<_i2.Either<_i5.Failure, _i6.EmployeeEntity>>.value(
+                _FakeEither_0<_i5.Failure, _i6.EmployeeEntity>(
+          this,
+          Invocation.method(
+            #getFilteredEmployees,
+            [keys],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i4.Future<_i2.Either<_i5.Failure, _i6.EmployeeEntity>>.value(
+                _FakeEither_0<_i5.Failure, _i6.EmployeeEntity>(
+          this,
+          Invocation.method(
+            #getFilteredEmployees,
+            [keys],
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, _i6.EmployeeEntity>>);

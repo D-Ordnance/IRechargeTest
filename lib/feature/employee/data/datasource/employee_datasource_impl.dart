@@ -43,7 +43,7 @@ class EmployeeDataSourceImpl implements EmployeeDataSource {
   Future<EmployeeEntity> remoteDataSource() async {
     final response = StatusResponse.fromJson(Api.successResponse);
     final employees = toEmployeeDataList(response.data);
-    saveToLocal(employees);
+    await saveToLocal(employees);
     return await localDataSource();
   }
 
@@ -54,16 +54,23 @@ class EmployeeDataSourceImpl implements EmployeeDataSource {
 
   static List<EmployeeData> toEmployeeDataList(
       List<Map<String, dynamic>> response) {
-    List<EmployeeData> employees = List.empty();
-    response.forEach((element) => employees.add(EmployeeData(
-        id: element['id'],
-        firstName: element['firstName'],
-        lastName: element['lastName'],
-        level: element['level'],
-        designation: element['designation'],
-        employeeScore: element['employeeScore'],
-        currentSalary: element['currentSalary'],
-        employmentStatus: element['employmentStatus'])));
+    List<EmployeeData> employees = <EmployeeData>[];
+    try {
+      for (final element in response) {
+        employees.add(EmployeeData(
+            id: element['id'],
+            firstName: element['first_name'],
+            lastName: element['last_name'],
+            level: element['level'],
+            designation: element['designation'],
+            productivityScore: element['productivity_score'],
+            currentSalary: element['current_salary'],
+            employmentStatus: element['employment_status']));
+      }
+    } catch (e) {
+      throw const CacheException(msg: "Something went wrong");
+    }
+
     return employees;
   }
 }

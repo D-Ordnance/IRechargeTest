@@ -3,14 +3,15 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i5;
 
-import 'package:mobile_assessment/core/models/response.dart' as _i2;
 import 'package:mobile_assessment/core/network/network_info.dart' as _i6;
 import 'package:mobile_assessment/feature/employee/data/datasource/employee_datasource.dart'
-    as _i3;
+    as _i4;
 import 'package:mobile_assessment/feature/employee/data/model/employee_data.dart'
-    as _i5;
+    as _i3;
+import 'package:mobile_assessment/feature/employee/domain/entity/employee_entity.dart'
+    as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -24,9 +25,19 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeStatusResponse_0 extends _i1.SmartFake
-    implements _i2.StatusResponse {
-  _FakeStatusResponse_0(
+class _FakeEmployeeEntity_0 extends _i1.SmartFake
+    implements _i2.EmployeeEntity {
+  _FakeEmployeeEntity_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeEmployeeData_1 extends _i1.SmartFake implements _i3.EmployeeData {
+  _FakeEmployeeData_1(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -39,14 +50,14 @@ class _FakeStatusResponse_0 extends _i1.SmartFake
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockEmployeeDataSource extends _i1.Mock
-    implements _i3.EmployeeDataSource {
+    implements _i4.EmployeeDataSource {
   @override
-  _i4.Future<_i2.StatusResponse> remoteDataSource() => (super.noSuchMethod(
+  _i5.Future<_i2.EmployeeEntity> remoteDataSource() => (super.noSuchMethod(
         Invocation.method(
           #remoteDataSource,
           [],
         ),
-        returnValue: _i4.Future<_i2.StatusResponse>.value(_FakeStatusResponse_0(
+        returnValue: _i5.Future<_i2.EmployeeEntity>.value(_FakeEmployeeEntity_0(
           this,
           Invocation.method(
             #remoteDataSource,
@@ -54,22 +65,22 @@ class MockEmployeeDataSource extends _i1.Mock
           ),
         )),
         returnValueForMissingStub:
-            _i4.Future<_i2.StatusResponse>.value(_FakeStatusResponse_0(
+            _i5.Future<_i2.EmployeeEntity>.value(_FakeEmployeeEntity_0(
           this,
           Invocation.method(
             #remoteDataSource,
             [],
           ),
         )),
-      ) as _i4.Future<_i2.StatusResponse>);
+      ) as _i5.Future<_i2.EmployeeEntity>);
 
   @override
-  _i4.Future<_i2.StatusResponse> localDataSource() => (super.noSuchMethod(
+  _i5.Future<_i2.EmployeeEntity> localDataSource() => (super.noSuchMethod(
         Invocation.method(
           #localDataSource,
           [],
         ),
-        returnValue: _i4.Future<_i2.StatusResponse>.value(_FakeStatusResponse_0(
+        returnValue: _i5.Future<_i2.EmployeeEntity>.value(_FakeEmployeeEntity_0(
           this,
           Invocation.method(
             #localDataSource,
@@ -77,25 +88,74 @@ class MockEmployeeDataSource extends _i1.Mock
           ),
         )),
         returnValueForMissingStub:
-            _i4.Future<_i2.StatusResponse>.value(_FakeStatusResponse_0(
+            _i5.Future<_i2.EmployeeEntity>.value(_FakeEmployeeEntity_0(
           this,
           Invocation.method(
             #localDataSource,
             [],
           ),
         )),
-      ) as _i4.Future<_i2.StatusResponse>);
+      ) as _i5.Future<_i2.EmployeeEntity>);
 
   @override
-  _i4.Future<void> saveToLocal(List<_i5.EmployeeData>? employee) =>
+  _i5.Future<void> saveToLocal(List<_i3.EmployeeData>? employee) =>
       (super.noSuchMethod(
         Invocation.method(
           #saveToLocal,
           [employee],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+
+  @override
+  _i5.Future<_i3.EmployeeData> getEmployeeByIdLocalDataSource(int? id) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getEmployeeByIdLocalDataSource,
+          [id],
+        ),
+        returnValue: _i5.Future<_i3.EmployeeData>.value(_FakeEmployeeData_1(
+          this,
+          Invocation.method(
+            #getEmployeeByIdLocalDataSource,
+            [id],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.EmployeeData>.value(_FakeEmployeeData_1(
+          this,
+          Invocation.method(
+            #getEmployeeByIdLocalDataSource,
+            [id],
+          ),
+        )),
+      ) as _i5.Future<_i3.EmployeeData>);
+
+  @override
+  _i5.Future<_i2.EmployeeEntity> filterEmployeeByKeyslocalDataSource(
+          Map<String, String>? keys) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #filterEmployeeByKeyslocalDataSource,
+          [keys],
+        ),
+        returnValue: _i5.Future<_i2.EmployeeEntity>.value(_FakeEmployeeEntity_0(
+          this,
+          Invocation.method(
+            #filterEmployeeByKeyslocalDataSource,
+            [keys],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i2.EmployeeEntity>.value(_FakeEmployeeEntity_0(
+          this,
+          Invocation.method(
+            #filterEmployeeByKeyslocalDataSource,
+            [keys],
+          ),
+        )),
+      ) as _i5.Future<_i2.EmployeeEntity>);
 }
 
 /// A class which mocks [NetworkInfo].
@@ -103,9 +163,9 @@ class MockEmployeeDataSource extends _i1.Mock
 /// See the documentation for Mockito's code generation for more information.
 class MockNetworkInfo extends _i1.Mock implements _i6.NetworkInfo {
   @override
-  _i4.Future<bool> get isConnected => (super.noSuchMethod(
+  _i5.Future<bool> get isConnected => (super.noSuchMethod(
         Invocation.getter(#isConnected),
-        returnValue: _i4.Future<bool>.value(false),
-        returnValueForMissingStub: _i4.Future<bool>.value(false),
-      ) as _i4.Future<bool>);
+        returnValue: _i5.Future<bool>.value(false),
+        returnValueForMissingStub: _i5.Future<bool>.value(false),
+      ) as _i5.Future<bool>);
 }
